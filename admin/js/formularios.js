@@ -37,7 +37,7 @@ function enviarForm(service, tabla) {
 
 function borrarFila(id, tabla) {
   $("#confirmacion-modal").remove();
-  console.log(event);
+
   $ejeY = event.pageY;
   $ejeX = event.pageX;
 
@@ -50,6 +50,17 @@ function borrarFila(id, tabla) {
     width: "200px",
     top: $ejeY,
     left: $ejeX - 200,
+  });
+
+  $(document).click(function (e) {
+    if (
+      !$("#confirmacion-modal").is(e.target) &&
+      !$("#confirmacion-modal").has(e.target).length
+    ) {
+      console.log("out");
+      $("#confirmacion-modal").remove();
+      $(document).off();
+    }
   });
 
   $("#confirmar-borrado").click(function () {
