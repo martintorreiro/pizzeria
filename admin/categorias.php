@@ -1,14 +1,13 @@
 <?php
     include "header.php";
-    include "db.php";
-
-    $res = $db->query("SELECT * FROM categorias");
    
 ?>
 
 <main id="categorias" class="seccion-admin">
 
-    <div>
+    <div class="contenedor-tablas">
+
+    
         <h2>Editar Categorías</h2>
         <button onClick="cargarForm('categorias.php')">Crear nueva categoria</button>
         <table>

@@ -38,3 +38,19 @@ th,
 td {
   padding: 10px 20px;
 }
+
+.contenedor-tablas{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+#confirmacion-modal{
+  position: absolute;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+}

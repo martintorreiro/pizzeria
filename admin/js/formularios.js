@@ -12,7 +12,6 @@ function cerrarForm() {
 }
 
 function enviarForm(service, tabla) {
-  console.log(service);
   tinymce.triggerSave();
 
   const fdata = new FormData($("#formulario-manejado").get(0));
@@ -37,16 +36,14 @@ function enviarForm(service, tabla) {
 
 function borrarFila(id, tabla) {
   $("#confirmacion-modal").remove();
-
+  
   $ejeY = event.pageY;
   $ejeX = event.pageX;
-
+  event.stopPropagation();
   $("body").append(
     "<div id=confirmacion-modal><p>Esta seguro de que desea borrar esta fila?</p><button id='confirmar-borrado'>Confirmar</button></div>"
   );
   $("#confirmacion-modal").css({
-    "background-color": "white",
-    position: "absolute",
     width: "200px",
     top: $ejeY,
     left: $ejeX - 200,
@@ -57,7 +54,6 @@ function borrarFila(id, tabla) {
       !$("#confirmacion-modal").is(e.target) &&
       !$("#confirmacion-modal").has(e.target).length
     ) {
-      console.log("out");
       $("#confirmacion-modal").remove();
       $(document).off();
     }
@@ -65,8 +61,7 @@ function borrarFila(id, tabla) {
 
   $("#confirmar-borrado").click(function () {
     $.post("service/eliminar-fila.php", { id, tabla }, function (data) {
-      console.log(data);
-
+      $(document).off();
       $("#confirmacion-modal").remove();
       cargarTabla(tabla);
     });

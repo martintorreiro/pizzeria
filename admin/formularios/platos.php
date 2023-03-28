@@ -8,6 +8,7 @@ if(isset($_GET["editar"])){
     $nombre = $row['nombre'];
     $precio=$row['precio'];
     $foto=$row['foto'];
+
 }else{
     $nombre="";
     $precio="";
@@ -29,6 +30,31 @@ if(isset($_GET["editar"])){
             <div class="form_group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" value="<?php echo $nombre?>">
+            </div>
+
+            <div class="form_group">
+                <label for="precio">Precio:</label>
+                <input type="text" id="precio" name="precio" value="<?php echo $precio?>">
+            </div>
+
+            <div class="form_group">
+                <label for="categoria">Categoría: </label>
+                <select name="categoria" id="categoria">
+                    <option value="">--Seleccionar Categoria--</option>
+                    <?php
+
+                    $resCat = $db->query("SELECT * FROM categorias");
+                        while($rowCat = $resCat->fetch_assoc()){
+                                
+                            echo "<option value='".$rowCat['id']."'>".$rowCat['nombre']."</option>";
+
+                        }
+
+                       
+
+                    ?>
+
+                </select>
             </div>
 
         </div>
