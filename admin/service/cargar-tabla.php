@@ -13,13 +13,11 @@ if(isset($_GET["tabla"])){
         $cadena = "";
         
         while($row = $res->fetch_assoc()){
-    
             $cadena .= " <tr>
                             <th>".$row["nombre"]."</th>
                             <th><button onClick='cargarForm(`categorias.php?id=".$row["id"]."&editar=true`)'><i class='fa-solid fa-pen-to-square'></i></button></th>
                             <th><button onClick='borrarFila(".$row["id"].",`categorias`)'><i class='fa-solid fa-trash'></i></button></th>
                         </tr>";
-            
         }
     
             echo $cadena;
@@ -34,15 +32,27 @@ if(isset($_GET["tabla"])){
             $cadena .= " <tr>
                             <th>".$row["nombre"]."</th>
                             <th>".$row["precio"]."</th>
-                            <th><img src='imagenes/platos/".$row["foto"]."' alt=''></th>
+                            <th><img src='../public/images/platos/".$row["foto"]."' alt='imagen plato'></th>
                             <th>".$row["categoria"]."</th>
-                            <th><button onClick='cargarForm(`categorias.php?id=".$row["id"]."&editar=true`)'><i class='fa-solid fa-pen-to-square'></i></button></th>
-                            <th><button onClick='borrarFila(".$row["id"].",`categorias`)'><i class='fa-solid fa-trash'></i></button></th>
+                            <th><button onClick='cargarForm(`platos.php?id=".$row["id"]."&editar=true`)'><i class='fa-solid fa-pen-to-square'></i></button></th>
+                            <th><button onClick='borrarFila(".$row["id"].",`platos`)'><i class='fa-solid fa-trash'></i></button></th>
                         </tr>";
             
         }
     
             echo $cadena;
+    }else if($tabla == "galeria"){
+        
+        $res = $db->query("SELECT * FROM galeria_imagenes");
+        $cadena = "<ul>";
+        
+        while($row = $res->fetch_assoc()){
+            $cadena .=  "<li><img src='../public/images/galeria-restaurante/".$row["nombre"]."' alt='imagen restaurante'></li>"; 
+        }
+
+        $cadena .= "</ul>";
+        echo $cadena;
+        
     }
   
 }

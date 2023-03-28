@@ -19,6 +19,7 @@ if(isset($_GET["editar"])){
     </div>
     <form id="formulario-manejado" onSubmit="return enviarForm('categorias.php','categorias')">
 
+        <input type="hidden" name="tabla" value="categorias">
         <div class="form_body">
 
             <?php if(isset($_GET["editar"])){ echo "<input type='hidden' name='id' value= $id>";} ?>

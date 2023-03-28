@@ -13,7 +13,7 @@ function cerrarForm() {
 
 function enviarForm(service, tabla) {
   tinymce.triggerSave();
-
+  console.log(tabla);
   const fdata = new FormData($("#formulario-manejado").get(0));
 
   $.ajax({
@@ -36,7 +36,7 @@ function enviarForm(service, tabla) {
 
 function borrarFila(id, tabla) {
   $("#confirmacion-modal").remove();
-  
+
   $ejeY = event.pageY;
   $ejeX = event.pageX;
   event.stopPropagation();
@@ -65,5 +65,49 @@ function borrarFila(id, tabla) {
       $("#confirmacion-modal").remove();
       cargarTabla(tabla);
     });
+  });
+}
+
+const cargarPreview = (input) => {
+  $("#contenedor-preview").empty();
+  if (input.files && input.files[0]) {
+    for (let i = 0; i < input.files.length; i++) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        $("#contenedor-preview").append(
+          `<img src='${e.target.result}' alt='preview'>`
+        );
+      };
+
+      reader.readAsDataURL(input.files[i]);
+    }
+  }
+};
+
+function manejarGaleria() {
+  $("#añadir-galeria form").submit(function (e) {
+    e.preventDefault();
+    const fData = new FormData($("#añadir-galeria form").get(0));
+
+    $.ajax({
+      url: "service/categorias.php",
+      type: "POST",
+      data: fData,
+      processData: false,
+      contentType: false,
+      beforeSend: function () {
+        //something before send
+      },
+      success: function (data) {
+        console.log("enviado", data);
+        cargarTabla("galeria");
+      },
+    });
+    console.log("submit");
+  });
+  $("#añadir-galeria input").change(function () {
+    console.log("galeria", this);
+
+    $("#añadir-galeria form").submit();
   });
 }

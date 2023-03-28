@@ -1,0 +1,162 @@
+#modal-formulario {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario_estandar {
+  background-color: white;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 500px;
+  margin: 20px 0;
+}
+.formulario_estandar .cabecera {
+  padding: 12px 20px;
+  background-color: #007bff;
+}
+
+.formulario_estandar .cabecera h2 {
+  font-size: 18px;
+  color: white;
+}
+
+.formulario_estandar .form_body {
+  width: 100%;
+  padding: 20px;
+}
+
+.formulario_estandar .form_group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario_estandar .form_group label {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.formulario_estandar .form_group input[type="text"],
+.formulario_estandar .form_group select,
+.formulario_estandar .form_group input[type="time"],
+.formulario_estandar .form_group input[type="password"],
+.formulario_estandar .form_group input[type="email"],
+.formulario_estandar .form_group input[type="date"] {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid rgb(192, 192, 192);
+  background-color: white;
+  outline: none;
+}
+
+.formulario_estandar .form_group input[type="text"]:focus,
+.formulario_estandar .form_group select:focus,
+.formulario_estandar .form_group input[type="time"]:focus,
+.formulario_estandar .form_group input[type="password"]:focus,
+.formulario_estandar .form_group input[type="email"]:focus,
+.formulario_estandar .form_group input[type="date"]:focus {
+  border: 1px solid #007bff;
+}
+
+.formulario_estandar .form_group textarea {
+  outline: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid rgb(192, 192, 192);
+  height: 200px;
+}
+
+.formulario_estandar .form_group textarea:focus {
+  border: 1px solid #007bff;
+}
+
+.formulario_estandar .form_group__files input {
+  display: none;
+}
+
+.formulario_estandar .form_group__files label {
+  padding: 6px 12px;
+  border: 1px solid var(--gris-letras);
+  border-radius: 5px;
+}
+
+.formulario_estandar .form_group__files label:hover {
+  cursor: pointer;
+}
+
+.formulario_estandar .controls {
+  padding: 20px;
+  text-align: end;
+}
+
+.formulario_estandar .controls button {
+  font-size: 16px;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  background-color: #007bff;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.formulario_estandar .controls button[id="cancelar"] {
+  background-color: #dc3545;
+}
+
+.formulario_estandar .controls button:hover {
+  opacity: 0.85;
+}
+
+.formulario_estandar .form_inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formulario_estandar .form_inputs > div {
+  width: 45%;
+}
+
+.formulario_estandar .imagenes_guardadas .contenedor_imagenes {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.formulario_estandar .imagenes_guardadas .contenedor_imagenes > div {
+  position: relative;
+  width: 30%;
+}
+
+.formulario_estandar
+  .imagenes_guardadas
+  .contenedor_imagenes
+  > div
+  .borrar-imagen {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.formulario_estandar .imagenes_guardadas .contenedor_imagenes > div img {
+  width: 100%;
+}
+#contenedor-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#contenedor-preview img {
+  width: 100px;
+}

@@ -39,16 +39,31 @@ td {
   padding: 10px 20px;
 }
 
-.contenedor-tablas{
+.contenedor-tablas {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
+.contenedor-tablas img {
+  width: 80px;
+}
 
+#añadir-galeria input {
+  display: none;
+}
 
-#confirmacion-modal{
+#añadir-galeria label {
+  padding: 10px 20px;
+  border: 1px solid black;
+}
+
+#tabla li img {
+  width: 150px;
+}
+
+#confirmacion-modal {
   position: absolute;
   padding: 10px;
   background-color: white;

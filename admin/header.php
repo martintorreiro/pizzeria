@@ -10,6 +10,7 @@
     <script src="js/cargarTabla.js"></script>
     <script src="js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/plantilla.css">
     <title>Pizzería</title>
