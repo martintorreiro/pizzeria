@@ -1,23 +1,67 @@
-.seccion-admin {
-  padding-top: 40px;
+:root{
+  --azul-oscuro:rgb(38, 41, 53);
+  --gris-claro:rgb(215, 210, 210);
+  --rojo-claro:rgb(147, 73, 73);
+  --verde:rgb(153, 46, 38);
+  --gris-fondo:rgb(226, 226, 226);
+}
+
+body{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 30px;
+}
+
+a{
+  color: var(--gris-claro);
+}
+
+a:hover{
+  color: var(--verde);
+}
+
+body > main{
+  display: grid;
+  grid-template-columns: 200px 1fr;
 }
 
 /* HEADER */
 
-header > div {
-  padding: 10px 20px;
+header{
+  height: 50px;
 }
 
-header nav > ul > li {
-  margin-left: 16px;
+
+/* ASIDE */
+
+aside{
+  background-color: var(--azul-oscuro);
+  padding: 10px;
 }
 
-header nav > ul a {
-  color: black;
+.logo{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-header nav > ul a:hover {
-  color: lightcoral;
+.logo img{
+  width: 100px;
+}
+
+aside nav ul{
+  padding: 10px;
+  border-top: 1px solid var(--gris-claro);
+}
+
+aside nav li{
+ padding: 10px 20px;
+ font-size: 20px;
+}
+
+main{
+  background-color: var(--gris-fondo);
 }
 
 /* INDEX */
@@ -44,6 +88,7 @@ td {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 60px;
 }
 
 .contenedor-tablas img {
@@ -55,6 +100,7 @@ td {
 }
 
 #añadir-galeria label {
+  display: block;
   padding: 10px 20px;
   border: 1px solid black;
 }

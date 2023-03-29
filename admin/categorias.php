@@ -3,12 +3,13 @@
    
 ?>
 
-<main id="categorias" class="seccion-admin">
+<section id="categorias" >
+
+<header><h1>Editar Categorías</h1></header>
 
     <div class="contenedor-tablas">
 
-    
-        <h2>Editar Categorías</h2>
+        
         <button onClick="cargarForm('categorias.php')">Crear nueva categoria</button>
         <table>
             <thead>
@@ -24,7 +25,7 @@
         </table>
     </div>
 
-</main>
+</section>
 
 <script>
 cargarTabla("categorias")

@@ -2,13 +2,17 @@
     include "header.php";
 ?>
 
-<main id="platos" class="seccion-admin">
+<section id="platos">
+
+<header><h2>Editar Platos</h2></header>
+
 
     <div class="contenedor-tablas">
 
+        
 
-        <h2>Editar Platos</h2>
         <button onClick="cargarForm('platos.php')">Añadir nuevo plato</button>
+
         <table>
             <thead>
                 <tr>
@@ -26,7 +30,7 @@
         </table>
     </div>
 
-</main>
+</section>
 
 <script>
 cargarTabla("platos")

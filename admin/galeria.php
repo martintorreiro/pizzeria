@@ -2,23 +2,26 @@
     include "header.php";   
 ?>
 
-<main id="galeria" class="seccion-admin">
+<section id="galeria">
 
+<header><h1>Editar Galería</h1></header>
 
+    <div class="contenedor-tablas">
 
-    <h2>Editar Galería</h2>
+        
 
-    <div id="añadir-galeria">
-        <form action="" enctype="multipart/form-data">
-            <input type="hidden" name="tabla" value="galeria">
-            <label for="imagenes">Añadir Imagen</label>
-            <input type="file" id="imagenes" name="imagenes[]" accept=".jpg, .jpeg, .png" multiple>
-        </form>
+        <div id="añadir-galeria">
+            <form action="" enctype="multipart/form-data">
+                <input type="hidden" name="tabla" value="galeria">
+                <label for="imagenes">Añadir Imagen</label>
+                <input type="file" id="imagenes" name="imagenes[]" accept=".jpg, .jpeg, .png" multiple>
+            </form>
+        </div>
+
+        <div id="tabla"></div>
     </div>
 
-    <div id="tabla"></div>
-
-</main>
+    </section>
 
 <script>
 cargarTabla("galeria")

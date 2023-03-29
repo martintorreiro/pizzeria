@@ -17,15 +17,15 @@
 </head>
 
 <body>
-    <header>
-        <div class="flex ai-center jc-sb w-1024 centrado">
-            <h1><a href="index.php">Administracion</a></h1>
+    
+    <main>
+        <aside> 
+            <div class="logo"><img src="../public/images/logo_pizzeria.png" alt="logo pizzeria"></div>
             <nav>
-                <ul class="flex">
+                <ul>
                     <li><a href="categorias.php">Categorías</a></li>
                     <li><a href="platos.php">Platos</a></li>
                     <li><a href="galeria.php">Galería</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
+        </aside>
