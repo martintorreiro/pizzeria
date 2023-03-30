@@ -19,9 +19,8 @@
 
 <section id="conocenos">
 
-    <div class="gradiante"></div>
-
-    <div>
+    <div class="conocenos-texto">
+        <div>
         <h2>Restaurante Il Bambino</h2>
 
         <blockquote>
@@ -37,6 +36,7 @@
             por el
             afamado organismo Ospitalià Italiana como el mejor italiano de Europa fuera de Italia.
         </p>
+        </div>
     </div>
 
 </section>

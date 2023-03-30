@@ -7,6 +7,11 @@
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
 }
 
+@font-face {
+  font-family: "Cherry Swash";
+  src: url("../webfonts/CherrySwash-Regular.ttf");
+}
+
 :root {
   --gris-letras: rgb(94, 94, 94);
   --rojo-letras: rgb(182, 41, 41);
@@ -51,16 +56,72 @@ header nav li {
 }
 
 .item {
-  height: 1000px;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  height: 700px;
 }
 
 #conocenos {
   position: relative;
   background-color: linear-gradient(-90deg, black, red);
-  /* background-image: url("../images/horno.jpg"); */
+  background-image: url("../images/cartoon.png"); 
+  background-position: right;
+  background-size:contain;
+  background-repeat: no-repeat;
+  height: 60vw;
+  max-height: 614px;
+  min-height: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
+#conocenos h2{
+  font-family:"Cherry Swash" ;
+  font-size: 42px;
+}
+
+#conocenos blockquote{
+  font-family:"Cherry Swash" ;
+  font-weight: bold;
+  margin: 40px 0;
+  padding: 10px 37px;
+  position: relative;
+}
+
+#conocenos blockquote::after{
+content: "\f10e";
+font-family: FontAwesome;
+color: lightpink;
+font-size: 28px;
+position: absolute;
+    right: 7px;
+    top: 4px;
+}
+
+#conocenos blockquote::before{
+  content: "\f10d";
+  font-family: FontAwesome;
+  color: lightpink;
+font-size: 30px;
+position: absolute;
+    left: 7px;
+    top: 4px;
+  }
+
+.conocenos-texto{
+  width: 1170px;
+  line-height: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  text-shadow: 0 0 45px white;
+}
+
+.conocenos-texto div{
+  width: 60%;
+}
+
 
 /* .gradiante {
   background-color: linear-gradient(-90deg, black, red);
