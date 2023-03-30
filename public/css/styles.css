@@ -24,6 +24,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  position: relative;
+  height: 50px;
 }
 
 header a {
@@ -36,7 +38,12 @@ header a:hover {
 }
 
 .logo {
-  padding: 10px;
+  padding: 2px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  z-index: 10;
 }
 
 .logo img {
@@ -64,9 +71,9 @@ header nav li {
 #conocenos {
   position: relative;
   background-color: linear-gradient(-90deg, black, red);
-  background-image: url("../images/cartoon.png"); 
+  background-image: url("../images/cartoon.png");
   background-position: right;
-  background-size:contain;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 60vw;
   max-height: 614px;
@@ -77,40 +84,40 @@ header nav li {
   text-align: center;
 }
 
-#conocenos h2{
-  font-family:"Cherry Swash" ;
+#conocenos h2 {
+  font-family: "Cherry Swash";
   font-size: 42px;
 }
 
-#conocenos blockquote{
-  font-family:"Cherry Swash" ;
+#conocenos blockquote {
+  font-family: "Cherry Swash";
   font-weight: bold;
   margin: 40px 0;
   padding: 10px 37px;
   position: relative;
 }
 
-#conocenos blockquote::after{
-content: "\f10e";
-font-family: FontAwesome;
-color: lightpink;
-font-size: 28px;
-position: absolute;
-    right: 7px;
-    top: 4px;
+#conocenos blockquote::after {
+  content: "\f10e";
+  font-family: FontAwesome;
+  color: lightpink;
+  font-size: 28px;
+  position: absolute;
+  right: 7px;
+  top: 4px;
 }
 
-#conocenos blockquote::before{
+#conocenos blockquote::before {
   content: "\f10d";
   font-family: FontAwesome;
   color: lightpink;
-font-size: 30px;
-position: absolute;
-    left: 7px;
-    top: 4px;
-  }
+  font-size: 30px;
+  position: absolute;
+  left: 7px;
+  top: 4px;
+}
 
-.conocenos-texto{
+.conocenos-texto {
   width: 1170px;
   line-height: 24px;
   font-family: Arial, Helvetica, sans-serif;
@@ -118,10 +125,9 @@ position: absolute;
   text-shadow: 0 0 45px white;
 }
 
-.conocenos-texto div{
+.conocenos-texto div {
   width: 60%;
 }
-
 
 /* .gradiante {
   background-color: linear-gradient(-90deg, black, red);

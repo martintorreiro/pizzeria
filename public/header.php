@@ -21,6 +21,7 @@
         <div class="logo">
             <img src="images/logo_pizzeria.png" alt="pizza logo" />
         </div>
+        <h1></h1>
         <nav class="flex space-between">
 
             <div id="bars-menu">
