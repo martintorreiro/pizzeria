@@ -5,13 +5,20 @@
 
 <section id="galeria">
     <div>
-        <ul class="listado-galeria">
-        <?php
+
+        <div class="owl-carousel car2 owl-theme">
+            <?php
             while($row=$res->fetch_assoc()){
-                echo "<li><a href='images/galeria-restaurante/".$row["nombre"]."' data-lightbox='image-".$row["id"]."' data-title='My caption'><img src='images/galeria-restaurante/".$row["nombre"]."' data='iamgen galeria' /></a></li>";
+               echo  "<div class='item car-img".$row["id"]."'  >
+                        <div style='background-image:url(\"images/galeria-restaurante/".$row["nombre"]."\"); background-position:center; background-size:cover;'>
+                        <a href='images/galeria-restaurante/".$row["nombre"]."' data-lightbox='image-".$row["id"]."' data-title='My caption'></a>
+                        </div>
+
+                    </div>";
+                    
             }
         ?>
-        </ul>
+        </div>
+
     </div>
-    
 </section>

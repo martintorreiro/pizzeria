@@ -15,10 +15,10 @@ $(".stop").on("click", function () {
 });
 
 var owl2 = $(".owl-carousel.car2");
-owl.owlCarousel({
+owl2.owlCarousel({
   items: 5,
   loop: true,
-  margin: 0,
+  margin: 5,
   autoplay: true,
   autoplayTimeout: 5000,
   autoplayHoverPause: true,

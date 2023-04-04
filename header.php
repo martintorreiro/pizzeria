@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/conocenos.css">
     <link rel="stylesheet" href="css/carta.css">
     <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/contacto.css">
     <title>Pizza Demo</title>
 </head>
 
@@ -33,6 +34,8 @@
                 <div id="bars-menu">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+
+
                 <ul class="main-nav">
                     <li><a href="#" id="nav-home" class="nav-home red-nav">Inicio</a></li>
                     <li><a href="#conocenos" id="nav-about" class="nav-about">Conócenos</a></li>
@@ -43,7 +46,17 @@
                     <li>
                         <a href="#contacto" id="nav-contact" class="nav-contact">Contacto</a>
                     </li>
+
+                    <li id="carrito">
+                        <i
+                            class="open-icon fa-solid fa-cart-shopping absolute top-0 right-0 left-0 bot-0 flex jc-center ai-center"></i>
+                        <span
+                            id="cantidad-carrito"><?php echo isset($_SESSION['carrito'])?sizeof($_SESSION['carrito']):"" ?></span>
+                        <div id="contenido-carrito"></div>
+                    </li>
+
                 </ul>
+
 
             </nav>
         </div>

@@ -1,7 +1,23 @@
 #galeria {
-    background-color: var(--gris-fondo);
+  background-color: var(--gris-fondo);
 }
 
-#galeria > div{
-    
+#galeria > div {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.car2 .item > div {
+  height: 120px;
+}
+
+.car2 .item > div a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.car2 .owl-dots {
+  display: none;
 }
