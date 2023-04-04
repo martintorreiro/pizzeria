@@ -32,7 +32,7 @@ if(isset($_GET["tabla"])){
             $cadena .= " <tr>
                             <th>".$row["nombre"]."</th>
                             <th>".$row["precio"]."</th>
-                            <th><img src='../public/images/platos/".$row["foto"]."' alt='imagen plato'></th>
+                            <th><img src='../images/platos/".$row["foto"]."' alt='imagen plato'></th>
                             <th>".$row["categoria"]."</th>
                             <th><button onClick='cargarForm(`platos.php?id=".$row["id"]."&editar=true`)'><i class='fa-solid fa-pen-to-square'></i></button></th>
                             <th><button onClick='borrarFila(".$row["id"].",`platos`)'><i class='fa-solid fa-trash'></i></button></th>
@@ -47,7 +47,7 @@ if(isset($_GET["tabla"])){
         $cadena = "<ul>";
         
         while($row = $res->fetch_assoc()){
-            $cadena .=  "<li><img src='../public/images/galeria-restaurante/".$row["nombre"]."' alt='imagen restaurante'></li>"; 
+            $cadena .=  "<li><img src='../images/galeria-restaurante/".$row["nombre"]."' alt='imagen restaurante'></li>"; 
         }
 
         $cadena .= "</ul>";

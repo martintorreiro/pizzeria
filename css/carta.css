@@ -1,0 +1,68 @@
+.carta{
+    padding: 50px 0;
+}
+
+.carta > div{
+    max-width:1100px ;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+}
+
+.carta h2{
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carta .lista-categorias{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(230, 230, 230, 0.8);
+}
+
+.carta .lista-categorias::after{
+   content: "";
+   width: 50%;
+}
+
+.carta .lista-categorias > div{
+    width: 50%;
+    padding: 20px 40px;
+}
+
+.categoria{
+    max-width: 650px;
+    text-transform: capitalize;
+}
+.categoria h3{
+    font-size: 22px;
+    border-bottom: 1px solid var(--gris-letras);
+}
+
+.categoria ul{
+    padding: 5px;
+}
+
+.categoria li{
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+
+
+
+@media (max-width: 1000px){
+    .carta .lista-categorias > div{
+        width: 100%;
+    } 
+
+    .carta .lista-categorias > div{
+        padding: 20px 10px;
+    }
+    
+}

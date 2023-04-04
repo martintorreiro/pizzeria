@@ -1,0 +1,90 @@
+#conocenos {
+    position: relative;
+    background-color: black;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 1 ), rgba(0, 0, 0, 0)), url("../images/horno.jpg") ;
+    background-position: right top;
+    background-size:contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    color:white;
+  }
+  
+  #conocenos h2 {
+    font-family: "Cherry Swash";
+    font-size: 48px;
+    line-height: normal;
+  }
+  
+  #conocenos blockquote {
+    font-family: "Cherry Swash";
+    font-size: 24px;
+    margin: 40px 0;
+    padding: 10px 37px;
+    position: relative;
+  }
+  
+  #conocenos blockquote::after {
+    content: "\f10e";
+    font-family: FontAwesome;
+    color: lightpink;
+    font-size: 28px;
+    position: absolute;
+    right: 7px;
+    top: 4px;
+  }
+
+  #conocenos p{
+    font-size: 18px;
+  }
+  
+  #conocenos blockquote::before {
+    content: "\f10d";
+    font-family: FontAwesome;
+    color: lightpink;
+    font-size: 30px;
+    position: absolute;
+    left: 7px;
+    top: 4px;
+  }
+  
+  .conocenos-texto {
+    max-width: 1400px;
+    padding: 100px 200px;
+    line-height: 24px;
+    text-shadow: black 1px 0 10px;
+  }
+
+
+  @media (max-width: 1000px) {
+    
+    .conocenos-texto {
+        max-width: 800px;
+        padding: 100px 100px;
+    }
+
+    #conocenos h2{
+        font-size: 28px;
+      }
+
+    #conocenos blockquote{
+        font-size: 20px;
+    }
+
+    #conocenos p{
+        font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 660px) {
+
+
+
+  .conocenos-texto {
+    padding: 60px 30px;
+  }
+
+  #conocenos h2{
+    font-size: 22px;
+  }
+
+}

@@ -74,7 +74,7 @@ if($_POST){
     
             if ($tmpFilePath != ""){
     
-                $newFilePath = "../../public/images/platos/" . $imagen['name'];
+                $newFilePath = "../../images/platos/" . $imagen['name'];
     
                 if(move_uploaded_file($tmpFilePath, $newFilePath)){
 
@@ -107,7 +107,7 @@ if($_POST){
 
             if ($tmpFilePath != ""){
 
-                $newFilePath = "../../public/images/galeria-restaurante/" . $imagenes['name'][$i];
+                $newFilePath = "../../images/galeria-restaurante/" . $imagenes['name'][$i];
 
                 if(move_uploaded_file($tmpFilePath, $newFilePath)){
 
