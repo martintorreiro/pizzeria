@@ -19,41 +19,40 @@ include "../db.php";
                 $subtotal += $row["precio"]*$cantidad;
                 
                 $cadena .= "<li >
+                
                                 <div class='img'>
                                     <img src='images/platos/".$row["foto"]."' alt='foto producto'>
                                 </div >
 
-                                <div >
-                                    <p >".$row["nombre"]."</p>
-                                    <span >".$row["precio"]*$cantidad."$</span>
-                                    
-                                    <div class='cantidad-carrito'> 
-                                        <button onClick='añadirCarrito($id,-1)'>-</button>
-                                        <input  onChange='añadirCarrito($id,\"set\")' type='text' value='".$cantidad."'>
-                                        <button onClick='añadirCarrito($id,1)'>+</button>
+                                <div  class='info-plato'>
+                                    <div>
+                                        <p class='nombre'>".$row["nombre"]."</p>
+                                        <span class='precio'>".$row["precio"]*$cantidad."$</span>
                                     </div>
-                                    <button onClick='añadirCarrito($id,\"delete\")'>
-                                        <i class='fa-regular fa-trash-can'></i>
-                                    </button>
+                                    <div class='controles-carrito'> 
+                                        <button onClick='añadirCarrito($id,-1)'><i class='fa-solid fa-circle-minus'></i></button>
+                                        <input  onChange='añadirCarrito($id,\"set\")' type='text' value='".$cantidad."'>
+                                        <button onClick='añadirCarrito($id,1)'><i class='fa-solid fa-circle-plus'></i></button>
+                                    
+                                        <button class='delete' onClick='añadirCarrito($id,\"delete\")'>
+                                            <i class='fa-regular fa-trash-can'></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 
-                                
-
                             </li>";
-                
             }
-    
         }
     
         $cadena .= "</ul>
-                    
-                    <div >
-                        <span >TOTAL CARRITO:</span>
-                        <span >".$subtotal."$</span>
-                    </div>
-                    <div >
-                        <a href='checkout.php'>Completar Pedido</a>
-                        
+                    <div class='acciones-carrito'>
+                        <div class='total-carrito'>
+                            <span >TOTAL CARRITO:</span>
+                            <span >".$subtotal."$</span>
+                        </div>
+                        <div >
+                            <a href='pago-carrito.php'>Completar Pedido</a>
+                        </div>
                     </div>";
         echo $cadena;
 

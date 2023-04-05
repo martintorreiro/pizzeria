@@ -18,44 +18,49 @@
     <link rel="stylesheet" href="css/carta.css">
     <link rel="stylesheet" href="css/galeria.css">
     <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/pago-carrito.css">
     <title>Pizza Demo</title>
 </head>
 
 <body>
 
     <header>
-    
+
         <div>
             <div class="logo">
-                <a href="#">
-                <img src="images/logo_pizzeria.png" alt="pizza logo" />
+                <a href="index.php#">
+                    <img src="images/logo_pizzeria.png" alt="pizza logo" />
                 </a>
             </div>
             <h1></h1>
             <nav>
 
                 <div id="bars-menu">
-                    <i class="fa-solid fa-bars"></i>
+
+                    <div class="carrito"><i class="open-icon fa-solid fa-cart-shopping"></i> <span
+                            class="cantidad-carrito"><?php echo isset($_SESSION['carrito'])?sizeof($_SESSION['carrito']):"" ?></span>
+                    </div>
+                    <div><i class="fa-solid fa-bars"></i></div>
+
                 </div>
 
 
                 <ul class="main-nav">
-                    <li><a href="#" id="nav-home" class="nav-home red-nav">Inicio</a></li>
-                    <li><a href="#conocenos" id="nav-about" class="nav-about">Conócenos</a></li>
-                    <li><a href="#carta" id="nav-menu" class="nav-menu">Menú</a></li>
+                    <li><a href="index.php#" id="nav-home" class="nav-home red-nav">Inicio</a></li>
+                    <li><a href="index.php#conocenos" id="nav-about" class="nav-about">Conócenos</a></li>
+                    <li><a href="index.php#carta" id="nav-menu" class="nav-menu">Menú</a></li>
                     <li>
-                        <a href="#galeria" id="nav-gallery" class="nav-gallery">Galería</a>
+                        <a href="index.php#galeria" id="nav-gallery" class="nav-gallery">Galería</a>
                     </li>
                     <li>
-                        <a href="#contacto" id="nav-contact" class="nav-contact">Contacto</a>
+                        <a href="index.php#contacto" id="nav-contact" class="nav-contact">Contacto</a>
                     </li>
 
-                    <li id="carrito">
-                        <i
-                            class="open-icon fa-solid fa-cart-shopping absolute top-0 right-0 left-0 bot-0 flex jc-center ai-center"></i>
+                    <li class="carrito">
+                        <i class="open-icon fa-solid fa-cart-shopping"></i>
                         <span
-                            id="cantidad-carrito"><?php echo isset($_SESSION['carrito'])?sizeof($_SESSION['carrito']):"" ?></span>
-                            
+                            class="cantidad-carrito"><?php echo isset($_SESSION['carrito'])?sizeof($_SESSION['carrito']):"" ?></span>
+
                     </li>
 
                 </ul>

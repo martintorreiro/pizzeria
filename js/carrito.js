@@ -1,28 +1,23 @@
 function cargarCarrito() {
-
   $("#contenido-carrito").load("includes/cargarCarrito.php", function () {
-    $(".añadircarrito").off();
-    $(".cantidad-producto").off();
-    $(".añadirN").off();
-    eventosCarrito() ;
+    $(".cantidad-carrito").load("includes/cantidadCarrito.php", function () {});
   });
 }
 
 //---------ABRIR Y CERRAR CARRITO
 
-$("#carrito").click(function () {
+$(".carrito").click(function () {
   $(this).toggleClass("abierto");
   $("#contenido-carrito").toggleClass("oculto");
-
   if ($(this).hasClass("abierto")) {
     $(document).click(function (e) {
       if (
-        !$("#carrito").is(e.target) &&
-        !$("#carrito").has(e.target).length &&
+        !$(".carrito").is(e.target) &&
+        !$(".carrito").has(e.target).length &&
         !$("#contenido-carrito").is(e.target) &&
         !$("#contenido-carrito").has(e.target).length
       ) {
-        $("#carrito").removeClass("abierto");
+        $(".carrito").removeClass("abierto");
         $("#contenido-carrito").addClass("oculto");
         $(document).off();
       } else if (
@@ -37,16 +32,16 @@ $("#carrito").click(function () {
 
 //--------AÑADIR AL CARRITO
 
-function añadirCarrito(id,cantidad=1){
-  let body = {id:id};
-if(cantidad == "set"){
-  body.cantidad = event.target.value
-  body.pisar = "prueba"
-}else{
-  body.cantidad = cantidad;
-}
+function añadirCarrito(id, cantidad = 1) {
+  let body = { id: id };
+  if (cantidad == "set") {
+    body.cantidad = event.target.value;
+    body.pisar = "prueba";
+  } else {
+    body.cantidad = cantidad;
+  }
   $.post("includes/añadirCarrito.php", body, function (data) {
-    console.log(data)
+    console.log(data);
     if (data == "OK") {
       $("#cantidadCarrito").load("service/carritoCantidad.php");
       cargarCarrito();
@@ -55,7 +50,7 @@ if(cantidad == "set"){
   });
 }
 
-function eventosCarrito() {
+/* function eventosCarrito() {
   $(".añadircarrito").click(function () {
     
     id_producto = $(this).data("id_producto");
@@ -98,4 +93,4 @@ function eventosCarrito() {
       }
     });
   });
-}
+} */

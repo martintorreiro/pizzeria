@@ -3,6 +3,12 @@
     include "db.php";
 ?>
 
+<!-- 
+    DBOVEDA1@GMAIL.COM 
+    PRACTICAS: DIEGO-> 687736300
+               DIEGO WAS-> 630778330
+    curriculum: canva europass
+-->
 <section class="slider" id="home">
     <div class="owl-carousel car1 owl-theme">
         <div class="item car-img1"

@@ -1,0 +1,9 @@
+#pago-carrito {
+  padding: 100px 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+#pago-carrito > div {
+  max-width: 1100px;
+  margin: 0 auto;
+}
