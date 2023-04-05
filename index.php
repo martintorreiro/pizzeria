@@ -23,13 +23,12 @@ require "conocenos.php"
 ?>
 
 <?php
-require "galeria.php"
-?>
-
-<?php
 require "carta.php"
 ?>
 
+<?php
+require "galeria.php"
+?>
 
 <?php
     include "footer.php";

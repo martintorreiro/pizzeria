@@ -6,7 +6,7 @@
     max-width:1100px ;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 30px;
+    padding: 0 10px;
 }
 
 .carta h2{
@@ -52,6 +52,17 @@
     position: relative;
     
 }
+.categoria li button{
+    color: var(--azul-boton);
+    border: none;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.categoria li button:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+}
 
 
 
@@ -64,5 +75,7 @@
     .carta .lista-categorias > div{
         padding: 20px 10px;
     }
+
+    
     
 }

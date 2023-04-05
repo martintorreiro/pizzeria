@@ -2,7 +2,7 @@
 include "../db.php";
 
 
-    $cadena = "<ul>";
+    $cadena = "<ul class='lista-carrito'>";
     $subtotal=0;
     if(!isset($_SESSION["carrito"])||count($_SESSION["carrito"])<1){
         echo "<p>Aun no tienes productos en el carrito!</p>";
@@ -10,33 +10,34 @@ include "../db.php";
 
         foreach($_SESSION['carrito'] as $clave=>$valor){
 
-            $id_producto =  $_SESSION['carrito'][$clave]['id_producto'];
+            $id =  $_SESSION['carrito'][$clave]['id'];
             $cantidad = $_SESSION['carrito'][$clave]['cantidad'];
-            $res = $db->query("SELECT p.*,fp.nombre AS img FROM producto p LEFT JOIN fotos_producto fp 
-                        ON fp.id_producto = p.id WHERE p.id = $id_producto GROUP BY p.id");
+            $res = $db->query("SELECT * FROM platos WHERE id = $id");
 
             if($row = $res->fetch_assoc()){
     
                 $subtotal += $row["precio"]*$cantidad;
                 
-                $cadena .= "<li class='padd-10 flex jc-sb ai-start'>
-                                <img class='w-70' src='fotos-producto/".$row["img"]."' alt='foto producto'>
-                                
-                                <div class='flex column jc-sb h-x-100 padd-0-10 w-160 '>
-                                    <p class='mayu bold of-ellipsis'>".$row["nombre"]."</p>
-                                    <span class='font-s-16 color-naranja bold'>".$row["precio"]*$cantidad."$</span>
+                $cadena .= "<li >
+                                <div class='img'>
+                                    <img src='images/platos/".$row["foto"]."' alt='foto producto'>
+                                </div >
+
+                                <div >
+                                    <p >".$row["nombre"]."</p>
+                                    <span >".$row["precio"]*$cantidad."$</span>
                                     
-                                    
-                                    <div class='cantidad-carrito flex marg-l-5 marg-t-5 '>
-                                        <button data-id_producto='".$id_producto."' data-cantidad='-1' class='añadircarrito'>-</button>
-                                        <input data-id_producto='".$id_producto."' class='cantidad-producto positive-integer' type='text' value='".$cantidad."'>
-                                        <button data-id_producto='".$id_producto."' class='añadircarrito'>+</button>
+                                    <div class='cantidad-carrito'> 
+                                        <button onClick='añadirCarrito($id,-1)'>-</button>
+                                        <input  onChange='añadirCarrito($id,\"set\")' type='text' value='".$cantidad."'>
+                                        <button onClick='añadirCarrito($id,1)'>+</button>
                                     </div>
+                                    <button onClick='añadirCarrito($id,\"delete\")'>
+                                        <i class='fa-regular fa-trash-can'></i>
+                                    </button>
                                 </div>
                                 
-                                <button data-id_producto='".$id_producto."' data-cantidad='all' class='añadircarrito padd-0-10 hover-color-naranja'>
-                                    <i class='fa-regular fa-trash-can font-s-18'></i>
-                                </button>
+                                
 
                             </li>";
                 
@@ -46,13 +47,13 @@ include "../db.php";
     
         $cadena .= "</ul>
                     
-                    <div class='flex jc-sb ai-center marg-t-20'>
-                        <span class='font-s-16 bold'>CART SUBTOTAL :</span>
-                        <span class='font-s-20 bold color-naranja'>".$subtotal."$</span>
+                    <div >
+                        <span >TOTAL CARRITO:</span>
+                        <span >".$subtotal."$</span>
                     </div>
-                    <div class='marg-t-30 flex column ai-center'>
-                        <a href='checkout.php' class='d-line-block ta-center bg-color-naranja color-blanco w-x-100 padd-10-0 hover-bg-negro'>PROCEED TO CHECKOUT</a>
-                        <a href='carrito.php' class='color-negro-letra marg-t-20 hover-color-naranja'>VIEW AND EDIT CART</a>
+                    <div >
+                        <a href='checkout.php'>Completar Pedido</a>
+                        
                     </div>";
         echo $cadena;
 

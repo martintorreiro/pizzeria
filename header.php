@@ -24,9 +24,12 @@
 <body>
 
     <header>
+    
         <div>
             <div class="logo">
+                <a href="#">
                 <img src="images/logo_pizzeria.png" alt="pizza logo" />
+                </a>
             </div>
             <h1></h1>
             <nav>
@@ -52,12 +55,12 @@
                             class="open-icon fa-solid fa-cart-shopping absolute top-0 right-0 left-0 bot-0 flex jc-center ai-center"></i>
                         <span
                             id="cantidad-carrito"><?php echo isset($_SESSION['carrito'])?sizeof($_SESSION['carrito']):"" ?></span>
-                        <div id="contenido-carrito"></div>
+                            
                     </li>
 
                 </ul>
 
-
+                <div id="contenido-carrito" class="oculto"></div>
             </nav>
         </div>
     </header>

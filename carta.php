@@ -36,7 +36,7 @@ ON p.id_categoria = c.id GROUP BY c.id");
                 $res = $db -> query("SELECT * from platos WHERE id_categoria = '".$row["id"]."'");
                 $cadena = "<div class='categoria'><h3>".$row["nombre"]."</h3><ul>";
                 while($rowPlato = $res->fetch_assoc()){
-                    $cadena .= "<li><span>".$rowPlato["nombre"]."</span><span class='doted'></span><span>".$rowPlato["precio"]." €</span></li>";
+                    $cadena .= "<li><span>".$rowPlato["nombre"]."</span><span>".$rowPlato["precio"]." €  <button onClick='añadirCarrito(".$rowPlato["id"].")' ><i class='fa-solid fa-circle-plus'></i></button></span></li>";
                 }
                 $cadena .= "</ul></div>";
                 echo $cadena;
